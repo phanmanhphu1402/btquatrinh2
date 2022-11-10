@@ -1,7 +1,8 @@
 package com.example.multi_notes;
 
+import io.realm.RealmObject;
 
-public class Note {
+public class Note extends RealmObject {
     String title;
     String description;
     long createdTime;
