@@ -30,8 +30,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view,parent,false));
-
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view, parent, false));
     }
 
     @Override
@@ -74,7 +73,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         return notesList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView titleOutput;
         TextView descriptionOutput;
@@ -84,7 +83,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
             super(itemView);
             titleOutput         = itemView.findViewById(R.id.titleoutput);
             descriptionOutput   = itemView.findViewById(R.id.descripoutput);
-            timeOutput         = itemView.findViewById(R.id.timeoutput);
+            timeOutput          = itemView.findViewById(R.id.timeoutput);
         }
     }
 }
