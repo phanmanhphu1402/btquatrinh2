@@ -4,51 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/teal_200"
+    android:orientation="vertical"
     tools:context=".NewNoteActivity">
+
     <TextView
+        android:id="@+id/titleTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/titleTextView"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:gravity="center"
         android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="@string/add_note_text"
         android:textColor="@color/white"
-        android:text="@string/add_note_text"/>
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp"
         android:layout_margin="10dp"
-        android:background="@drawable/rounded_corner">
+        android:background="@drawable/rounded_corner"
+        android:orientation="vertical"
+        android:padding="10dp">
+
         <EditText
+            android:id="@+id/EditTextNote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/EditTextNote"
+            android:layout_margin="10dp"
             android:background="#4003DAC5"
             android:hint="@string/tittle"
             android:padding="10dp"
-            android:layout_margin="10dp"/>
+            tools:ignore="TouchTargetSizeCheck" />
+
         <EditText
+            android:id="@+id/EditTextScrip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/EditTextScrip"
+            android:layout_margin="10dp"
             android:background="#4003DAC5"
-            android:hint="@string/description"
-            android:padding="10dp"
-            android:lines="10"
             android:gravity="top"
-            android:layout_margin="10dp"/>
+            android:hint="@string/description"
+            android:lines="10"
+            android:padding="10dp" />
     </LinearLayout>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/SaveBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/save"
         android:backgroundTint="@color/white"
+        android:text="@string/save"
         android:textColor="@color/teal_200" />
+
 </LinearLayout>

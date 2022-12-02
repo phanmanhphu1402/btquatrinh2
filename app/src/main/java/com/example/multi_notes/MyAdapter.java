@@ -47,6 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
             public boolean onLongClick(View view) {
                 PopupMenu menu = new PopupMenu(context, view);
                 menu.getMenu().add("DELETE");
+                menu.getMenu().add("Edit");
                 menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
@@ -59,9 +60,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
                             realm.commitTransaction();
                             Toast.makeText(context, "Note deleted", Toast.LENGTH_SHORT).show();
                         }
+                        else if (menuItem.getTitle().equals("Edit"))
+                        {
+                            Toast.makeText(context, "Edit note", Toast.LENGTH_SHORT).show();
+
+                        }
                         return true;
                     }
                 });
+
                 menu.show();
                 return true;
             }
