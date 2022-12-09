@@ -1,6 +1,7 @@
 package com.example.multi_notes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -63,18 +64,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
                         else if (menuItem.getTitle().equals("Edit"))
                         {
                             Toast.makeText(context, "Edit note", Toast.LENGTH_SHORT).show();
-
+                            Intent edit = new Intent(context, editNote.class);
+                            edit.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            edit.putExtra("title", note.getTitle());
+                            edit.putExtra("description", note.getDescription());
+                            context.startActivity(edit);
                         }
                         return true;
                     }
                 });
-
                 menu.show();
                 return true;
             }
         });
     }
-
     @Override
     public int getItemCount() {
         return notesList.size();

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         Realm.init(getApplicationContext());
         Realm realm = Realm.getDefaultInstance();
-        RealmResults<Note> notesList = realm.where(Note.class).findAllAsync();
+        RealmResults<Note> notesList = realm.where(Note.class).findAll();
 
         RecyclerView recyclerView = findViewById(R.id.rectanglesview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
